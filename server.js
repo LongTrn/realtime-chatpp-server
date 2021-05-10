@@ -22,11 +22,12 @@ const User = require("./models/user.model")
 const Message = require("./models/message.model")
 
 app.use('/public', express.static('public'));
-app.use(cors({
-    origin: process.env.REACT_APP_CLIENT_URL,
-    // origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}))
+// app.use(cors({
+//     origin: process.env.REACT_APP_CLIENT_URL,
+//     // origin: 'http://localhost:3000',
+//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }))
+app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session({
