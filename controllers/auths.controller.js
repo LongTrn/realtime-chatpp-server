@@ -66,6 +66,7 @@ module.exports.loginForm = (req, res) => {
 
 module.exports.login = async (req, res) => {
     try {
+        console.log(`server call login`)
         if (req.method !== 'POST') {
             throw new Error('Invalid required method');
         }
