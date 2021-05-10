@@ -89,7 +89,7 @@ server.listen( PORT, () => {
 const io = socketio(server, {
     cors: {
     //   origin: 'http://localhost:3000',
-      origin: process.env.REACT_APP_CLIENT_URL,
+      origin: process.env.REACT_APP_CLIENT_BASE,
     }
 });
 
