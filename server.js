@@ -23,7 +23,8 @@ const Message = require("./models/message.model")
 
 app.use('/public', express.static('public'));
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.REACT_APP_CLIENT_URL,
+    // origin: 'http://localhost:3000',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }))
 app.use(express.urlencoded({ extended: true }));
@@ -87,7 +88,8 @@ server.listen( PORT, () => {
 
 const io = socketio(server, {
     cors: {
-      origin: 'http://localhost:3000',
+    //   origin: 'http://localhost:3000',
+      origin: process.env.REACT_APP_CLIENT_URL,
     }
 });
 
